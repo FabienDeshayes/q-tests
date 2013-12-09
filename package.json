@@ -1,0 +1,13 @@
+{
+  "name": "Q-tests",
+  "version": "0.0.0",
+  "description": "Tests for Q.js",
+  "main": "test_q.js",
+  "author": "David Hagler <prozacgod@gmail.com>",
+  "dependencies": {
+    "mocha": "x.x.x",
+    "q": "x.x.x",
+    "mocha-as-promised": "x.x.x",
+    "should": "x.x.x"
+  }
+}
