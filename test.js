@@ -17,11 +17,9 @@ describe('Q', function() {
 			}, 100);
 		});
 
-		test_q.then(function() {
+		return test_q.then(function() {
 			tantrumThrower();
 		});
-
-		return test_q;
 	});
 
 	it('Should bubbble up indirect exceptions', function() {
@@ -30,9 +28,11 @@ describe('Q', function() {
 				resolve("Yay!");
 			}, 100);
 		});
+
+		var then_test_q;
 		
 		var result_q = Q.promise(function(resolve, reject) {
-			test_q.then(function(){
+			then_test_q = test_q.then(function(){
 				console.log("test_q has resolved");
 				tantrumThrower();
 				resolve("passed");
@@ -42,6 +42,7 @@ describe('Q', function() {
 				console.log("Hello");
 			});
 		});
-		return result_q;
+
+		return then_test_q;
 	});
 });
